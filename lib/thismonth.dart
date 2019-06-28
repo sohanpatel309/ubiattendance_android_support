@@ -155,20 +155,26 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                               return new ListView.builder(
                                   scrollDirection: Axis.vertical,
                                   itemCount: snapshot.data.length,
+
                                   itemBuilder: (BuildContext context, int index) {
+
                                     return new Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
+
                                       children: <Widget>[
 
                                         SizedBox(height: 40.0,),
+
                                         Container(
                                           width: MediaQuery
                                               .of(context)
                                               .size
-                                              .width * 0.18,
+                                              .width * 0.19,
+
                                           child:  Text(snapshot.data[index].EntryImage
                                               .toString(), style: TextStyle(
                                               color: Colors.black87,
+
                                               fontSize: 16.0),),
                                         ),
                                         Container(
@@ -176,6 +182,7 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                                               .of(context)
                                               .size
                                               .width * 0.40,
+                                          padding: EdgeInsets.only(left: 4.5),
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment
                                                 .start,
@@ -183,7 +190,7 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                                               Text(snapshot.data[index].Name
                                                   .toString(), style: TextStyle(
                                                   color: Colors.black87,
-
+                                                  //fontWeight: FontWeight.bold,
                                                   fontSize: 16.0),),
                                             ],
                                           ),
@@ -225,7 +232,7 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                            // return new Text("EXCEPTION: ${snapshot.error}");
                           }
 
@@ -279,6 +286,7 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                                               .of(context)
                                               .size
                                               .width * 0.40,
+                                          padding: EdgeInsets.only(left: 4.5),
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment
                                                 .start,
@@ -286,7 +294,7 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                                               Text(snapshot.data[index].Name
                                                   .toString(), style: TextStyle(
                                                   color: Colors.black87,
-                                                  fontWeight: FontWeight.bold,
+                                                //  fontWeight: FontWeight.bold,
                                                   fontSize: 16.0),),
                                             ],
                                           ),
@@ -330,7 +338,7 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner
@@ -389,6 +397,7 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                                               .of(context)
                                               .size
                                               .width * 0.40,
+                                          padding: EdgeInsets.only(left: 4.5),
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment
                                                 .start,
@@ -396,7 +405,7 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                                               Text(snapshot.data[index].Name
                                                   .toString(), style: TextStyle(
                                                   color: Colors.black87,
-                                                  fontWeight: FontWeight.bold,
+                                                 // fontWeight: FontWeight.bold,
                                                   fontSize: 16.0),),
                                             ],
                                           ),
@@ -439,7 +448,7 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                             }
                           }
                           else if (snapshot.hasError) {
-                             return new Text("Unable to connect server");
+                             return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner
@@ -496,6 +505,7 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                                               .of(context)
                                               .size
                                               .width * 0.40,
+                                          padding: EdgeInsets.only(left: 4.5),
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment
                                                 .start,
@@ -503,7 +513,7 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                                               Text(snapshot.data[index].Name
                                                   .toString(), style: TextStyle(
                                                   color: Colors.black87,
-                                                  fontWeight: FontWeight.bold,
+                                                //  fontWeight: FontWeight.bold,
                                                   fontSize: 16.0),),
                                             ],
                                           ),
@@ -546,7 +556,7 @@ class _ThisMonth extends State<ThisMonth> with SingleTickerProviderStateMixin {
                             }
                           }
                           else if (snapshot.hasError) {
-                             return new Text("Unable to connect server");
+                             return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner

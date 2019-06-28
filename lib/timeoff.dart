@@ -293,7 +293,7 @@ class _TimeOffPageState extends State<TimeOffPage> {
                     ),
                     validator: (date) {
                       if (date==null){
-                        return 'Please enter Timeoff date';
+                        return 'Please enter the date for Time off';
                       }
                     },
                   ), //Enter date
@@ -316,7 +316,7 @@ class _TimeOffPageState extends State<TimeOffPage> {
                           ),
                           validator: (time) {
                             if (time==null) {
-                              return 'Please enter start time';
+                              return 'Please enter the Start Time';
                             }
                           },
                             onChanged: (dt) {
@@ -352,7 +352,7 @@ class _TimeOffPageState extends State<TimeOffPage> {
                           },
                           validator: (time) {
                             if (time==null) {
-                              return 'Please enter end time';
+                              return 'Please enter the End Time';
                             }
 
                             var arr=_starttimeController.text.split(':');
@@ -360,7 +360,7 @@ class _TimeOffPageState extends State<TimeOffPage> {
                             final startTime = DateTime(2018, 6, 23,int.parse(arr[0]),int.parse(arr[1]),00,00);
                             final endTime = DateTime(2018, 6, 23,int.parse(arr1[0]),int.parse(arr1[1]),00,00);
                             if(endTime.isBefore(startTime)){
-                              return '\"To Time\" can\'t be smaller.';
+                              return '\"End Time\" can\'t be earlier then the Start Time.';
                             }
 
 
@@ -384,7 +384,7 @@ class _TimeOffPageState extends State<TimeOffPage> {
                     ),
                     validator: (value) {
                       if (value.isEmpty) {
-                        return 'Please enter reason';
+                        return 'Please enter the reason';
                       }
                     },
                     onFieldSubmitted: (String value) {

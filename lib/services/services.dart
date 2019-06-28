@@ -1346,14 +1346,15 @@ List<EmpList> createListEarlyLeaving(List data) {
 }
 
 //*******************************************************
-Future<List<EmpListTimeOff>> getTimeOFfDataList(date) async {
+Future<List<EmpListTimeOff>> getTimeOFfDataList(date,emp) async {
   if (date == '' || date == null) return null;
   final prefs = await SharedPreferences.getInstance();
   String orgid = prefs.getString('orgdir') ?? '';
-  final response = await http.get(globals.path + 'getTimeoffList?fd=$date&to=$date&refno=$orgid');
+  final response = await http.get(globals.path + 'getTimeoffList?fd=$date&to=$date&refno=$orgid&userid=$emp');
 
   List responseJson = json.decode(response.body.toString());
- // print(responseJson.toString());
+      print(globals.path + 'getTimeoffList?fd=$date&to=$date&refno=$orgid&userid=$emp');
+      print(responseJson.toString());
   List<EmpListTimeOff> list = createTimeOFfDataList(responseJson);
 //  print(list);
   return list;
@@ -1394,13 +1395,14 @@ class EmpListTimeOff {
 ////////////////////////////Punch location/visits  reports start////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
-Future<List<Punch>> getVisitsDataList(date) async {
+Future<List<Punch>> getVisitsDataList(date,emp) async {
+  print(date+ '/' + emp);
   final prefs = await SharedPreferences.getInstance();
   String empid = prefs.getString('empid') ?? '';
   String orgdir = prefs.getString('orgdir') ?? '';
- // print(globals.path + 'getPunchInfo?orgid=$orgdir&date=$date');
+  print(globals.path + 'getPunchInfo?orgid=$orgdir&date=$date');
   final response =
-  await http.get(globals.path + 'getPunchInfo?orgid=$orgdir&date=$date');
+  await http.get(globals.path + 'getPunchInfo?orgid=$orgdir&date=$date&uid=$emp');
   List responseJson = json.decode(response.body.toString());
   List<Punch> userList = createUserList(responseJson);
  // print('getSummaryPunch called--1');

@@ -173,7 +173,7 @@ class _LateComers extends State<LateComers> {
                 },
                 validator: (date) {
                   if (date == null) {
-                    return 'Please select date';
+                    return 'Please select a date';
                   }
                 },
               ),
@@ -210,7 +210,7 @@ class _LateComers extends State<LateComers> {
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.12,
-                    child: Text('Late By',
+                    child: Text('Late by',
                         style: TextStyle(color: Colors.orange),
                         textAlign: TextAlign.left),
                   ),
@@ -307,7 +307,7 @@ class _LateComers extends State<LateComers> {
               );
             }
           } else if (snapshot.hasError) {
-             return new Text("Unable to connect server");
+             return new Text("Unable to connect to server");
           }
          // return loader();
           return new Center(child: CircularProgressIndicator());

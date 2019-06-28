@@ -64,7 +64,6 @@ class _AskRegisterationPageState extends State<AskRegisterationPage> {
 
                         SizedBox(height: 5.0),
                         Row(
-
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             ButtonTheme(
@@ -92,7 +91,7 @@ class _AskRegisterationPageState extends State<AskRegisterationPage> {
                               height: 45.0,
                               child:FlatButton(
                                 shape: Border.all(color: Colors.orangeAccent),
-                                child: Text('Not registered? Sign Up',style: new TextStyle(color: Colors.orangeAccent,fontSize: 15.0),),
+                                child: Text('Company not registered? Sign Up',style: new TextStyle(color: Colors.orangeAccent,fontSize: 15.0),),
                                 color: Colors.white,
                                 onPressed: () {
                                   Navigator.push(
@@ -197,7 +196,7 @@ class _AskRegisterationPageState extends State<AskRegisterationPage> {
     } on PlatformException catch (e) {
       if (e.code == BarcodeScanner.CameraAccessDenied) {
         setState(() {
-          this.barcode = 'The user did not grant the camera permission!';
+          this.barcode = 'Kindly grant permission to access Camera from Settings';
         });
         return "pemission denied";
       } else {

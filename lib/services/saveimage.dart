@@ -426,8 +426,10 @@ class SaveImage {
         /*getTempImageDirectory();*/
         Map MarkAttMap = json.decode(response1.data);
         print(MarkAttMap["status"].toString());
-        if (MarkAttMap["status"] == 1 || MarkAttMap["status"] == 2)
+        if (MarkAttMap["status"] == 1 || MarkAttMap["status"] == 2) {
+          globals.tempvar = MarkAttMap["status"];
           return true;
+        }
         else
           return false;
       } else {

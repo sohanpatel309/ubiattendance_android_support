@@ -58,7 +58,7 @@ class _Designation_att extends State<Designation_att> with SingleTickerProviderS
         children: <Widget>[
           SizedBox(height:3.0),
           new Container(
-            child: Center(child:Text("Designation Wise Attendance",style: TextStyle(fontSize: 22.0,color: Colors.black54,),),),
+            child: Center(child:Text("Designation wise Attendance",style: TextStyle(fontSize: 22.0,color: Colors.black54,),),),
           ),
           Container(
             child: DateTimePickerFormField(
@@ -379,7 +379,7 @@ class _Designation_att extends State<Designation_att> with SingleTickerProviderS
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                             //  return new Text("${snapshot.error}");
                           }
 
@@ -504,7 +504,7 @@ class _Designation_att extends State<Designation_att> with SingleTickerProviderS
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                             // return new Text("${snapshot.error}");
                           }
 
@@ -713,14 +713,14 @@ class _Designation_att extends State<Designation_att> with SingleTickerProviderS
                                       width: MediaQuery.of(context).size.width*1,
                                       color: Colors.teal.withOpacity(0.1),
                                       padding:EdgeInsets.only(top:5.0,bottom: 5.0),
-                                      child:Text("No late comers on this date ",style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center,),
+                                      child:Text("No late comers on this date",style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center,),
                                     ),
                                   )
                               );
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner
@@ -933,7 +933,7 @@ class _Designation_att extends State<Designation_att> with SingleTickerProviderS
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner
@@ -950,7 +950,7 @@ class _Designation_att extends State<Designation_att> with SingleTickerProviderS
           ):Container(
             height: MediaQuery.of(context).size.height*0.25,
             child:Center(
-              child: Text('Please select the date'),
+              child: Text('Please select a date'),
             ),
           ),
         ],
@@ -969,7 +969,7 @@ class _Designation_att extends State<Designation_att> with SingleTickerProviderS
                 //    width: MediaQuery.of(context).size.width*.45,
                 child: InputDecorator(
                   decoration: InputDecoration(
-                    labelText: 'Select Designation',
+                    labelText: 'Select a Designation',
                     prefixIcon: Padding(
                       padding: EdgeInsets.all(1.0),
                       child: Icon(

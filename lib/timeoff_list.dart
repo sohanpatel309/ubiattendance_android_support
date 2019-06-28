@@ -20,6 +20,7 @@ class _TimeOffList extends State<TimeOffList> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   int _currentIndex = 1;
   String _orgName;
+  String emp='0';
   bool res = true;
   String admin_sts='0';
   var formatter = new DateFormat('dd-MMM-yyyy');
@@ -145,6 +146,7 @@ class _TimeOffList extends State<TimeOffList> {
             Divider(
               height: 10.0,
             ),
+            getEmployee_DD(),
             SizedBox(height: 2.0),
             Container(
               child: DateTimePickerFormField(
@@ -171,7 +173,7 @@ class _TimeOffList extends State<TimeOffList> {
                 },
                 validator: (date) {
                   if (date == null) {
-                    return 'Please select date';
+                    return 'Please select a date';
                   }
                 },
               ),
@@ -240,9 +242,83 @@ class _TimeOffList extends State<TimeOffList> {
     );
   }
 
+  Widget getEmployee_DD() {
+    String dc = "0";
+    return new FutureBuilder<List<Map>>(
+        future: getEmployeesList(0),// with -select- label
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            try {
+              return new Container(
+                //    width: MediaQuery.of(context).size.width*.45,
+                child: InputDecorator(
+                  decoration: InputDecoration(
+                    labelText: 'Select an Employee',
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.all(1.0),
+                      child: Icon(
+                        Icons.person,
+                        color: Colors.grey,
+                      ), // icon is 48px widget.
+                    ),
+                  ),
+
+                  child: new DropdownButton<String>(
+                    isDense: true,
+                    style: new TextStyle(
+                        fontSize: 15.0,
+                        color: Colors.black
+                    ),
+                    value: emp,
+                    onChanged: (String newValue) {
+                      setState(() {
+                        //  res = false;
+                        ///   getEmpDataList(today.text);
+
+                        res = true;
+                        emp = newValue;
+
+                        print("Ubiattendance");
+
+                      });
+
+
+                    },
+                    items: snapshot.data.map((Map map) {
+                      return new DropdownMenuItem<String>(
+                        value: map["Id"].toString(),
+                        child: new SizedBox(
+                            width: 200.0,
+                            child: map["Code"]!=''?new Text(map["Name"]+' ('+map["Code"]+')'):
+                            new Text(map["Name"],)),
+                      );
+                    }).toList(),
+
+                  ),
+                ),
+              );
+            }
+            catch(e){
+              return Text("EX: Unable to fetch employees");
+
+            }
+          } else if (snapshot.hasError) {
+            print(snapshot.error);
+            return new Text("ER: Unable to fetch employees");
+          }
+          // return loader();
+          return new Center(child: SizedBox(
+            child: CircularProgressIndicator(strokeWidth: 2.2,),
+            height: 20.0,
+            width: 20.0,
+          ),);
+        });
+  }
+
+
   getEmpDataList(date) {
     return new FutureBuilder<List<EmpListTimeOff>>(
-        future: getTimeOFfDataList(date),
+        future: getTimeOFfDataList(date,emp),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             if (snapshot.data.length > 0) {
@@ -310,7 +386,7 @@ class _TimeOffList extends State<TimeOffList> {
               );
             }
           } else if (snapshot.hasError) {
-             return new Text("Unable to connect server");
+             return new Text("Unable to connect to server");
           }
           // return loader();
           return new Center(child: CircularProgressIndicator());

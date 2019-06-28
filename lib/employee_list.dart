@@ -161,7 +161,7 @@ class _EmployeeList extends State<EmployeeList> {
                 MaterialPageRoute(builder: (context) => AddEmployee()),
               );
             },
-            tooltip: 'Add Employee',
+            tooltip: 'Add an Employee',
             child: new Icon(Icons.add),
           ),
         );

@@ -348,7 +348,7 @@ class _Reports extends State<Reports> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Icon(Icons.perm_contact_calendar,size: 40.0,),
+                    Icon(Icons.today,size: 40.0,),
                     SizedBox(width: 15.0,),
                     Expanded(
 //                            widthFactor: MediaQuery.of(context).size.width*0.10,
@@ -606,7 +606,7 @@ class _Reports extends State<Reports> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Icon(Icons.perm_contact_calendar,size: 40.0,),
+                    Icon(Icons.today,size: 40.0,),
                     SizedBox(width: 15.0,),
                     Expanded(
 //                            widthFactor: MediaQuery.of(context).size.width*0.10,
@@ -687,7 +687,7 @@ class _Reports extends State<Reports> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Icon(Icons.perm_contact_calendar,size: 40.0,),
+                    Icon(Icons.view_week,size: 40.0,),
                     SizedBox(width: 15.0,),
                     Expanded(
 //                            widthFactor: MediaQuery.of(context).size.width*0.10,
@@ -729,7 +729,7 @@ class _Reports extends State<Reports> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Icon(Icons.perm_contact_calendar,size: 40.0,),
+                    Icon(Icons.date_range,size: 40.0,),
                     SizedBox(width: 15.0,),
                     Expanded(
 //                            widthFactor: MediaQuery.of(context).size.width*0.10,

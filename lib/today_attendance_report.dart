@@ -320,7 +320,7 @@ class _TodayAttendance extends State<TodayAttendance> with SingleTickerProviderS
                             }
                           }
                           else if (snapshot.hasError) {
-                             return new Center(child:Text("Unable to connect server"));
+                             return new Center(child:Text("Unable to connect to server"));
                           }
 
                           // By default, show a loading spinner
@@ -418,7 +418,7 @@ class _TodayAttendance extends State<TodayAttendance> with SingleTickerProviderS
 
                           }
                           else if (snapshot.hasError) {
-                             return new Text("Unable to connect server");
+                             return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner
@@ -609,7 +609,7 @@ class _TodayAttendance extends State<TodayAttendance> with SingleTickerProviderS
                             }
                           }
                           else if (snapshot.hasError) {
-                             return new Text("Unable to connect server");
+                             return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner
@@ -793,12 +793,12 @@ class _TodayAttendance extends State<TodayAttendance> with SingleTickerProviderS
                               );
                             }else{
                               return new Center(
-                                child:Text("No early leavers today"),
+                                child:Text("No Early Leavers today"),
                               );
                             }
                           }
                           else if (snapshot.hasError) {
-                             return new Text("Unable to connect server");
+                             return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner

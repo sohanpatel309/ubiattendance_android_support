@@ -82,7 +82,7 @@ class _CustomDateAttendance extends State<CustomDateAttendance> with SingleTicke
               },
               validator: (date) {
                 if (date == null) {
-                  return 'Please select date';
+                  return 'Please select a date';
                 }
               },
             ),
@@ -112,7 +112,7 @@ class _CustomDateAttendance extends State<CustomDateAttendance> with SingleTicke
           ):Container(
             height: MediaQuery.of(context).size.height*0.25,
             child: Center(
-              child:Text('No Chart Available'),
+              child:Text('No date selected'),
             ),
           ),
           res==true?new Row(
@@ -353,7 +353,7 @@ class _CustomDateAttendance extends State<CustomDateAttendance> with SingleTicke
                             }
                           }
                           else if (snapshot.hasError) {
-						   return new Text("Unable to connect server");
+						   return new Text("Unable to connect to server");
                           //  return new Text("${snapshot.error}");
                           }
 
@@ -458,7 +458,7 @@ class _CustomDateAttendance extends State<CustomDateAttendance> with SingleTicke
                             }
                           }
                           else if (snapshot.hasError) {
-						   return new Text("Unable to connect server");
+						   return new Text("Unable to connect to server");
                            // return new Text("${snapshot.error}");
                           }
 
@@ -855,7 +855,7 @@ class _CustomDateAttendance extends State<CustomDateAttendance> with SingleTicke
                             }
                           }
                           else if (snapshot.hasError) {
-                             return new Text("Unable to connect server");
+                             return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner

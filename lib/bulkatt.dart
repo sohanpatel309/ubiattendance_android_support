@@ -415,7 +415,7 @@ class _Bulkatt extends State<Bulkatt> {
                                       00);
                                   if (!from.isBefore(to)) {
                                     showInSnackBar(_saved[i].Name +
-                                        "'s timein is greater than timeout...");
+                                        "'s In Time is later than Out Time");
                                     return null;
                                   }
                                 }
@@ -435,7 +435,7 @@ class _Bulkatt extends State<Bulkatt> {
                             if (res == "success") {
                               showDialog(context: context, child:
                               new AlertDialog(
-                                content: new Text("Attendance added successfully!"),
+                                content: new Text("Attendance punched successfully!"),
                               )
                               );
                               Navigator.push(
@@ -447,7 +447,7 @@ class _Bulkatt extends State<Bulkatt> {
                             else
                               showDialog(context: context, child:
                               new AlertDialog(
-                                content: new Text("Unable to add attendance!"),
+                                content: new Text("Unable to punch attendance!"),
                               )
                               );
                             setState(() {
@@ -592,7 +592,7 @@ class _Bulkatt extends State<Bulkatt> {
                                     ),
                                     validator: (time) {
                                       if (time == null && emplist[index].csts==1) {
-                                        return 'Please enter TimeIn';
+                                        return 'Please enter In Time';
                                       }
                                     },
                                   ),
@@ -659,7 +659,7 @@ class _Bulkatt extends State<Bulkatt> {
                                 //    print("dddddddd");
                                 // print(emplist[index].Attid);
                                 if ( time == null && emplist[index].csts==1 && emplist[index].Attid!='0'){
-                                  return "Enter Time out";
+                                  return "Enter Out Time";
                                 }
                                 else if (time == null && emplist[index].csts==1) {
                                   emplist[index].timeout ='00:00:00';

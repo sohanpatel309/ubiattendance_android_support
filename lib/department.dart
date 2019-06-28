@@ -301,7 +301,7 @@ class _Department extends State<Department> {
               {
                 if( dept.text==''){
               //    FocusScope.of(context).requestFocus(f_dept);
-                  showInSnackBar('Input Department Name');
+                  showInSnackBar('Enter the Department Name');
                 }
                 else {
                   if(_isButtonDisabled)
@@ -312,7 +312,7 @@ class _Department extends State<Department> {
                   addDept(dept.text, _sts).
                   then((res) {
                     if(int.parse(res)==0) {
-                      showInSnackBar('Unable to add department');
+                      showInSnackBar('Department could not be added');
                     }
                     else if(int.parse(res)==-1)
                       showInSnackBar('Department already exists');
@@ -329,7 +329,7 @@ class _Department extends State<Department> {
 
                   }
                   ).catchError((err){
-                    showInSnackBar('unable to call service');
+                    showInSnackBar('unable to call the service');
                     setState(() {
                       _isButtonDisabled=false;
                     });
@@ -411,7 +411,7 @@ class _Department extends State<Department> {
               {
                 if( new_dept.text==''){
                 //  FocusScope.of(context).requestFocus(f_dept);
-                  showInSnackBar('Input Department Name');
+                  showInSnackBar('Enter the Department Name');
                 }
                 else {
                   if(_isButtonDisabled)
@@ -422,12 +422,12 @@ class _Department extends State<Department> {
                   updateDept(new_dept.text,_sts1,did).
                   then((res) {
                     if(res=='0')
-                      showInSnackBar('Unable to update department');
+                      showInSnackBar('Unable to update the department');
                     else if(res=='-1')
-                      showInSnackBar('Department name already exist');
+                      showInSnackBar('This Department already exists');
                     else {
                       Navigator.of(context, rootNavigator: true).pop('dialog');
-                      showInSnackBar('Department updated successfully');
+                      showInSnackBar('Department name updated successfully');
                       getDeptWidget();
                       new_dept.text = '';
                       _sts1 = 'Active';

@@ -258,7 +258,7 @@ class _AddEmployee extends State<AddEmployee> {
                           ),
                           validator: (value) {
                             if (value.isEmpty) {
-                              return 'Please Enter First Name';
+                              return 'Please enter First Name';
                             }
                           },
                           onFieldSubmitted: (String value) {
@@ -284,7 +284,7 @@ class _AddEmployee extends State<AddEmployee> {
                           ),
                           validator: (value) {
                             if (value.isEmpty) {
-                              return 'Please Enter Last Name';
+                              return 'Please enter Last Name';
                             }
                           },
                           onFieldSubmitted: (String value) {
@@ -315,7 +315,7 @@ class _AddEmployee extends State<AddEmployee> {
                             RegExp regex = new RegExp(pattern);
                             if(value.isNotEmpty && !regex.hasMatch(value))
                               {
-                                return 'Enter valid email id';
+                                return 'Enter valid Email ID';
 
                               }
                           },
@@ -413,7 +413,7 @@ class _AddEmployee extends State<AddEmployee> {
                                 ),
                                 validator: (value) {
                                   if (value.isEmpty || value.length <6 || value.length >15 ) {
-                                    return 'Please Enter valid Contact';
+                                    return 'Please enter valid Phone No.';
                                   }
 
 
@@ -453,7 +453,7 @@ class _AddEmployee extends State<AddEmployee> {
                                   ),
                                   validator: (value) {
                                     if (value.isEmpty || value.length < 6) {
-                                      return 'Password is too short';
+                                      return 'Password should be of atleast 6 characters';
                                     }
                                   },
                                   onFieldSubmitted: (String value) {
@@ -503,15 +503,15 @@ class _AddEmployee extends State<AddEmployee> {
                             color: Colors.orangeAccent,
                             onPressed: () {
                               if(dept=='0') {
-                                showInSnackBar("Please select the department");
+                                showInSnackBar("Please select a department");
                                 return null;
                               }
                               if(desg=='0') {
-                                showInSnackBar("Please select the designation");
+                                showInSnackBar("Please select a designation");
                                 return null;
                               }
                               if(shift=='0') {
-                                showInSnackBar("Please select the shift");
+                                showInSnackBar("Please select a shift");
                                 return null;
                               }
                               if (_formKey.currentState.validate()) {
@@ -532,11 +532,11 @@ class _AddEmployee extends State<AddEmployee> {
                                     );
                                     }
                                   else if(res==3)
-                                    showInSnackBar('Contact Already Exist');
+                                    showInSnackBar('Contact already exists');
                                   else if(res==2)
-                                    showInSnackBar('Email Already Exist');
+                                    showInSnackBar('Email already exists');
                                   else
-                                    showInSnackBar('Unable to Add Employee');
+                                    showInSnackBar('Unable to add Employee');
                                     setState(() {
                                       _isButtonDisabled=false;
                                     });

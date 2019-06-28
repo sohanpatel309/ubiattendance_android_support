@@ -73,7 +73,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: const Text('Mark Attendance'),
+        title: const Text('Punch Attendance'),
         backgroundColor: Colors.teal,
         leading: IconButton(icon:Icon(Icons.arrow_back),onPressed:(){
           Navigator.push(
@@ -166,7 +166,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome> {
   Widget _cameraPreviewWidget() {
     if (controller == null || !controller.value.isInitialized) {
       return const Text(
-        'Mark your Attendance',
+        'Punch your Attendance',
         style: TextStyle(
           color: Colors.white,
           fontSize: 24.0,
@@ -183,7 +183,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome> {
   Widget _thumbnailWidget1() {
     if (controller == null || !controller.value.isInitialized) {
       return const Text(
-        'Mark your Attendance',
+        'Punch your Attendance',
         style: TextStyle(
           color: Colors.white,
           fontSize: 24.0,
@@ -412,7 +412,7 @@ if (tags.containsKey("Orientation")) {
     if (issave) {
       showDialog(context: context, child:
       new AlertDialog(
-        content: new Text("Attendance marked successfully!"),
+        content: new Text("Attendance punched successfully!"),
       )
       );
       Navigator.push(
@@ -424,7 +424,7 @@ if (tags.containsKey("Orientation")) {
       showDialog(context: context, child:
       new AlertDialog(
         title: new Text("!"),
-        content: new Text("Problem while marking attendance, try again."),
+        content: new Text("Attendance was not punched properly. Try again."),
       )
       );
       Navigator.push(

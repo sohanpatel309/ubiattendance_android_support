@@ -52,6 +52,7 @@ class _ProfilePageState extends State<ProfilePage> {
   String fname="", lname="", empid="", email="", status="", orgid="", orgdir="", sstatus="", org_name="", desination="", shifttiming="", profile,latit="",longi="";
   String department, shift, mobile;
   TextEditingController _phone;
+  TextEditingController _contcode;
   TextEditingController _city;
   String aid="";
   String shiftId="";
@@ -63,7 +64,6 @@ class _ProfilePageState extends State<ProfilePage> {
   }
   // Platform messages are asynchronous, so we initialize in an async method.
   initPlatformState() async {
-
     final prefs = await SharedPreferences.getInstance();
     empid = prefs.getString('empid') ?? '';
     orgdir = prefs.getString('orgdir') ?? '';
@@ -105,6 +105,7 @@ class _ProfilePageState extends State<ProfilePage> {
         desination = profileMap["desg"]??'';
         shifttiming = profileMap["shifttiming"]??'';
         _phone = new TextEditingController(text: profileMap["PersonalNo"]??'');
+        _contcode = new TextEditingController(text: profileMap['countryCode']??'');
         _city = new TextEditingController(text: profileMap["PersonalNo"]??'');
         _country = profileMap["CurrentCountry"]??'';
       });
@@ -477,18 +478,57 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                       //SizedBox(height: MediaQuery.of(context).size.height*.01),
-                       new TextFormField(
-                            style: new TextStyle(
-                                fontSize: 15.0,
-                                color: Colors.black
+
+
+                      new Row(
+                        children: <Widget>[
+                          new Expanded(
+                            flex: 27,
+
+                            child:Padding(
+                              padding: const EdgeInsets.only(top: 11.60),
+
+                              child:  new TextFormField(
+                                enabled: false,
+                                textAlign: TextAlign.justify,
+
+                                style: new TextStyle(
+
+                                  height: 1.15,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                decoration: const InputDecoration(
+                                  icon: const Icon(Icons.phone),
+                                ),
+                                controller: _contcode,
+                                keyboardType: TextInputType.phone,
+
+                              ),
+
                             ),
-                            decoration: const InputDecoration(
-                              icon: const Icon(Icons.phone,size: 20.0,),
-                              labelText: 'Phone',
-                            ),
-                            controller: _phone,
-                            keyboardType: TextInputType.phone,
                           ),
+
+                          new Expanded(
+                            flex: 73,
+                            child:  new TextFormField(
+                              style: new TextStyle(
+                                  fontSize: 15.0,
+                                  color: Colors.black
+                              ),
+                              decoration: const InputDecoration(
+                                labelText: 'Phone',
+                              ),
+                              controller: _phone,
+                              keyboardType: TextInputType.phone,
+                            ),
+
+
+                          ),
+
+                          // child: new Text(_obscureText ? "show": "Hide")),
+
+                        ],
+                      ),
                       ButtonBar(
                         children: <Widget>[
                           FlatButton(
@@ -624,7 +664,7 @@ class _ProfilePageState extends State<ProfilePage> {
       showDialog(context: context, child:
       new AlertDialog(
         //title: new Text("Congrats!"),
-        content: new Text("Couldn't load this photo, Please try again."),
+        content: new Text("Couldn't load this photo. Please try again."),
       )
       );
     }

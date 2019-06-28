@@ -295,7 +295,7 @@ class _Designation extends State<Designation> {
               {
 
                 if(desg.text==''){
-                    showInSnackBar('Input Designation');
+                    showInSnackBar('Enter a Designation');
                   }
                 else {
                   if(_isButtonDisabled)
@@ -308,7 +308,7 @@ class _Designation extends State<Designation> {
                   then((res) {
                     if(int.parse(res)==0) {
                       Navigator.of(context, rootNavigator: true).pop('dialog');
-                      showInSnackBar('Unable to add designation');
+                      showInSnackBar('Unable to add the designation');
                     }
                     else if(int.parse(res)==-1) {
                       Navigator.of(context, rootNavigator: true).pop('dialog');
@@ -327,7 +327,7 @@ class _Designation extends State<Designation> {
                     });
                   }
                   ).catchError((err){
-                    showInSnackBar('unable to call service');
+                    showInSnackBar('unable to call the service');
                     setState(() {
                       _isButtonDisabled=false;
                     });
@@ -412,7 +412,7 @@ class _Designation extends State<Designation> {
               {
                 if( new_dept.text==''){
                   //  FocusScope.of(context).requestFocus(f_dept);
-                  showInSnackBar('Input Designation Name');
+                  showInSnackBar('Enter a Designation');
                 }
                 else {
                   if(_isButtonDisabled)
@@ -423,9 +423,9 @@ class _Designation extends State<Designation> {
                   updateDesg(new_dept.text,_sts1,did).
                   then((res) {
                     if(res=='0')
-                      showInSnackBar('Unable to update designation');
+                      showInSnackBar('Unable to update the designation');
                     else if(res=='-1')
-                      showInSnackBar('Designation name already exist');
+                      showInSnackBar('Designation already exists');
                     else {
                       Navigator.of(context, rootNavigator: true).pop('dialog');
                       showInSnackBar('Designation updated successfully');

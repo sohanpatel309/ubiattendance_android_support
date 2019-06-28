@@ -42,7 +42,7 @@ class _ScanQRCodeState extends State<ScanQRCode> {
     } on PlatformException catch (e) {
       if (e.code == BarcodeScanner.CameraAccessDenied) {
         setState(() {
-          this.barcode = 'The user did not grant the camera permission!';
+          this.barcode = 'Kindly allow ubiAttendance App to take pictures';
         });
       } else {
         setState(() => this.barcode = 'Unknown error: $e');

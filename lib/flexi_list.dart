@@ -72,6 +72,11 @@ class _FlexiList extends State<FlexiList> {
                     'assets/logo.png', height: 40.0, width: 40.0),*/
           ],
         ),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
         automaticallyImplyLeading: false,
     /*  leading: IconButton(
             icon: Icon(Icons.arrow_back),
@@ -141,7 +146,7 @@ class _FlexiList extends State<FlexiList> {
             SizedBox(height: 8.0),
             Center(
               child: Text(
-                'Attendance',
+                'Flexi Attendance Log',
                 style: new TextStyle(
                   fontSize: 22.0,
                   color: Colors.black54,
@@ -177,7 +182,7 @@ class _FlexiList extends State<FlexiList> {
                 },
                 validator: (date) {
                   if (date == null) {
-                    return 'Please select date';
+                    return 'Please select a date';
                   }
                 },
               ),
@@ -191,16 +196,16 @@ class _FlexiList extends State<FlexiList> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   SizedBox(width: 1.0,),
-                  Container(
+                  /*Container(
                     width: MediaQuery.of(context).size.width * 0.15,
                     child: Text(
                       'Name',
                       style: TextStyle(color: Colors.orange),
                       textAlign: TextAlign.left,
                     ),
-                  ),
+                  ),*/
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.37,
+                    width: MediaQuery.of(context).size.width * 0.45,
                     child: Text(
                       'Location',
                       style: TextStyle(color: Colors.orange),
@@ -227,7 +232,7 @@ class _FlexiList extends State<FlexiList> {
               height: 5.2,
             ),
             new Expanded(
-              child: res == true ? getEmpDataList(today.text) : Center(),
+              child: res == true ? getEmpDataList(today.text) : Center(), //
             ),
           ],
         ),
@@ -259,13 +264,18 @@ class _FlexiList extends State<FlexiList> {
                   itemBuilder: (BuildContext context, int index) {
                     return new Container(
                       //          width: MediaQuery.of(context).size.width * .9,
+
                       child:Column(children: <Widget>[
+
                         new Row(
+
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                           children: <Widget>[
                             SizedBox(width: 8.0,),
-                            new Container(
+
+                           /* new Container(
                                 width: MediaQuery.of(context).size.width * 0.18,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -273,9 +283,9 @@ class _FlexiList extends State<FlexiList> {
                                     new Text(
                                       snapshot.data[index].Emp.toString(),style: TextStyle(fontWeight: FontWeight.bold),textAlign: TextAlign.left,),
                                   ],
-                                )),
+                                )),*/
                             new Container(
-                              width: MediaQuery.of(context).size.width * 0.37,
+                              width: MediaQuery.of(context).size.width * 0.45,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -302,7 +312,7 @@ class _FlexiList extends State<FlexiList> {
                                 width: MediaQuery
                                     .of(context)
                                     .size
-                                    .width * 0.19,
+                                    .width * 0.20,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment
                                       .center,
@@ -340,6 +350,7 @@ class _FlexiList extends State<FlexiList> {
                                     .of(context)
                                     .size
                                     .width * 0.22,
+
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment
                                       .center,
@@ -381,19 +392,21 @@ class _FlexiList extends State<FlexiList> {
                         ),
 
                         Divider(
+
                           color: Colors.blueGrey.withOpacity(0.25),
-                          height: 0.2,
+
+                          height: 5.2,
                         ),
                       ]),
                     );
                   });
             } else {
               return new Center(
-                child: Text("No Attendance ", style: TextStyle(color: Colors.orangeAccent,fontSize: 18.0),),
+                child: Text("No Attendance log", style: TextStyle(color: Colors.orangeAccent,fontSize: 18.0),),
               );
             }
           } else if (snapshot.hasError) {
-            return new Text("Unable to connect server");
+            return new Text("Unable to connect to server");
           }
           // return loader();
           return new Center(child: CircularProgressIndicator());

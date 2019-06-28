@@ -364,7 +364,7 @@ class _TimeOff_New extends State<TimeOff_New> {
                       textAlign: TextAlign.right,
                     ),
                     Text(
-                      " If Location not being fetched automatically?",
+                      " Location not fetched automatically?",
                       style: new TextStyle(fontSize: 12.0, color: Colors.black),
                       textAlign: TextAlign.left,
                     ),
@@ -395,7 +395,7 @@ class _TimeOff_New extends State<TimeOff_New> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-                'Location permission is restricted from app settings, click "Open Settings" to allow permission.',
+                'Enable Location Services from the settings.',
                 textAlign: TextAlign.center,
                 style: new TextStyle(fontSize: 14.0, color: Colors.red)),
             RaisedButton(

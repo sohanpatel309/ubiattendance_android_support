@@ -117,7 +117,7 @@ class _LastSeven extends State<LastSeven> with SingleTickerProviderStateMixin {
               ),
               SizedBox(height: 50.0,),
               Container(
-                width: MediaQuery.of(context).size.width*0.35,
+                width: MediaQuery.of(context).size.width*0.34,
                 child:Text('Name',style: TextStyle(color: Colors.teal,fontWeight:FontWeight.bold,fontSize: 16.0),),
               ),
               SizedBox(height: 50.0,),
@@ -165,7 +165,7 @@ class _LastSeven extends State<LastSeven> with SingleTickerProviderStateMixin {
                                           width: MediaQuery
                                               .of(context)
                                               .size
-                                              .width * 0.18,
+                                              .width * 0.19,
                                           child:  Text(snapshot.data[index].EntryImage
                                               .toString(), style: TextStyle(
                                               color: Colors.black87,
@@ -176,6 +176,7 @@ class _LastSeven extends State<LastSeven> with SingleTickerProviderStateMixin {
                                               .of(context)
                                               .size
                                               .width * 0.40,
+                                          padding: EdgeInsets.only(left: 4.5),
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment
                                                 .start,
@@ -224,7 +225,7 @@ class _LastSeven extends State<LastSeven> with SingleTickerProviderStateMixin {
                             }
                           }
                           else if (snapshot.hasError) {
-                             return new Text("Unable to connect server");
+                             return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner
@@ -276,6 +277,7 @@ class _LastSeven extends State<LastSeven> with SingleTickerProviderStateMixin {
                                               .of(context)
                                               .size
                                               .width * 0.40,
+                                          padding: EdgeInsets.only(left: 4.5),
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment
                                                 .start,
@@ -326,7 +328,7 @@ class _LastSeven extends State<LastSeven> with SingleTickerProviderStateMixin {
                             }
                           }
                           else if (snapshot.hasError) {
-                             return new Text("Unable to connect server");
+                             return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner
@@ -385,6 +387,7 @@ class _LastSeven extends State<LastSeven> with SingleTickerProviderStateMixin {
                                               .of(context)
                                               .size
                                               .width * 0.40,
+                                          padding: EdgeInsets.only(left: 4.5),
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment
                                                 .start,
@@ -435,7 +438,7 @@ class _LastSeven extends State<LastSeven> with SingleTickerProviderStateMixin {
                             }
                           }
                           else if (snapshot.hasError) {
-                             return new Text("Unable to connect server");
+                             return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner
@@ -492,6 +495,7 @@ class _LastSeven extends State<LastSeven> with SingleTickerProviderStateMixin {
                                               .of(context)
                                               .size
                                               .width * 0.40,
+                                          padding: EdgeInsets.only(left: 4.5),
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment
                                                 .start,
@@ -542,7 +546,7 @@ class _LastSeven extends State<LastSeven> with SingleTickerProviderStateMixin {
                             }
                           }
                           else if (snapshot.hasError) {
-                             return new Text("Unable to connect server");
+                             return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner

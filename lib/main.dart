@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
             image:   Image.asset('assets/splash.gif'),
             backgroundColor: Colors.white,
             styleTextUnderTheLoader: new TextStyle(color: Colors.grey[500]),
-            photoSize: MediaQuery.of(context).size.width*0.45
+            photoSize: MediaQuery.of(context).size.width*0.45,
             /*onClick: ()=>print("Flutter Egypt"),*/
           );
         }),);

@@ -335,12 +335,12 @@ class _ShiftList extends State<ShiftList> {
                   updateShift(new_dept.text,_sts1,did).
                   then((res) {
                     if(res=='0')
-                      showInSnackBar('Unable to update shift');
+                      showInSnackBar('Shift could not be updated. Try again.');
                     else if(res=='-1')
-                      showInSnackBar('Shift name already exist');
+                      showInSnackBar('This Shift already exists');
                     else {
                       Navigator.of(context, rootNavigator: true).pop('dialog');
-                      showInSnackBar('Shift updated successfully');
+                      showInSnackBar('Shift is updated successfully');
                       getDeptWidget();
                       new_dept.text = '';
                       _sts1 = 'Active';

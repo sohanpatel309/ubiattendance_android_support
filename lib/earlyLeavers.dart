@@ -175,7 +175,7 @@ class _EarlyLeavers extends State<EarlyLeavers> {
                 },
                 validator: (date) {
                   if (date == null) {
-                    return 'Please select date';
+                    return 'Please select a date';
                   }
                 },
               ),
@@ -307,7 +307,7 @@ class _EarlyLeavers extends State<EarlyLeavers> {
               );
             }
           } else if (snapshot.hasError) {
-             return new Text("Unable to connect server");
+             return new Text("Unable to connect to server");
           }
           // return loader();
           return new Center(child: CircularProgressIndicator());

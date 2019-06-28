@@ -72,7 +72,7 @@ class NewServices{
           globals.path+"getProfile",
           data: formData);
     //  print('##############################################################');
-     // print(response.toString());
+    ///  print(response.toString());
       if (response.statusCode == 200) {
         Map profileMap = json.decode(response.data);
         return profileMap;

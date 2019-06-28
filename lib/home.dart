@@ -441,7 +441,7 @@ class _HomePageState extends State<HomePage>{
                       textAlign: TextAlign.right,
                     ),
                     Text(
-                      " If Location not being fetched automatically?",
+                      "Location not being fetched automatically?",
                       style: new TextStyle(fontSize: 12.0, color: Colors.black),
                       textAlign: TextAlign.left,
                     ),
@@ -487,7 +487,7 @@ class _HomePageState extends State<HomePage>{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
         Text(
-            'Location permission is restricted from app settings, click "Open Settings" to allow permission.',
+            'Kindly enable Location services from the Settings.',
             textAlign: TextAlign.center,
             style: new TextStyle(fontSize: 14.0, color: Colors.red)),
         RaisedButton(
@@ -796,7 +796,7 @@ class _HomePageState extends State<HomePage>{
                          builder: (context) => TimeoffSummary()),
                    );
                  } else
-                   showInSnackBar('Please buy this feature');
+                   showInSnackBar('Upgrade your plan to enable this feature');
                }
              });
            },
@@ -879,7 +879,7 @@ class _HomePageState extends State<HomePage>{
                     MaterialPageRoute(builder: (context) => TimeoffSummary()),
                   );
                 } else
-                  showInSnackBar('Please buy this feature');
+                  showInSnackBar('Upgrade your plan to enable this feature.');
               }
             });
           },
@@ -1026,7 +1026,7 @@ class _HomePageState extends State<HomePage>{
                       color: Colors.red,
                     //  border: Border(left: 1.0,right: 1.0,top: 1.0,bottom: 1.0),
                     ),
-                    child:Text('Outside fenced area',style: TextStyle(fontSize: 20.0,color: Colors.white),),
+                    child:Text('Outside Geo fence',style: TextStyle(fontSize: 20.0,color: Colors.white),),
                   ):
               Container(
                 padding: EdgeInsets.only(left: 10.0,right: 10.0),
@@ -1034,14 +1034,14 @@ class _HomePageState extends State<HomePage>{
                   color: Colors.green,
                   //  border: Border(left: 1.0,right: 1.0,top: 1.0,bottom: 1.0),
                 ),
-                child:Text('Within fenced area',style: TextStyle(fontSize: 20.0,color: Colors.white),),
+                child:Text('Within Geo fence',style: TextStyle(fontSize: 20.0,color: Colors.white),),
               ):Center(),
             ])),
       ]);
     } else {
       return Column(children: [
         Text(
-            'Location permission is restricted from app settings, click "Open Settings" to allow permission.',
+            'Location Services are disabled. Enable Location Services in settings.',
             textAlign: TextAlign.center,
             style: new TextStyle(fontSize: 14.0, color: Colors.red)),
         RaisedButton(
@@ -1086,7 +1086,7 @@ class _HomePageState extends State<HomePage>{
           textAlign: TextAlign.center, style: new TextStyle(fontSize: 14.0));
     } else {
       return new Text(
-          'Location access is denied. Enable the access through the settings.',
+          'Location Services are disabled. Enable Location Services in settings.',
           textAlign: TextAlign.center,
           style: new TextStyle(fontSize: 14.0, color: Colors.red));
       /*return new  Text('Location is restricted from app settings, click here to allow location permission and refresh', textAlign: TextAlign.center, style: new TextStyle(fontSize: 14.0,color: Colors.red));*/
@@ -1131,8 +1131,8 @@ print('aidId'+aid);
       } else {
         showDialog(context: context, child:
         new AlertDialog(
-          title: new Text("!"),
-          content: new Text("Problem while marking attendance, try again."),
+          title: new Text("Warning!"),
+          content: new Text("Attendance was not punched. Try again."),
         )
         );
         setState(() {
@@ -1143,7 +1143,7 @@ print('aidId'+aid);
       showDialog(context: context, child:
       new AlertDialog(
 
-        content: new Text("Internet connection not found!."),
+        content: new Text("No Network"),
       )
       );
     }
@@ -1228,7 +1228,7 @@ print('aidId'+aid);
       showDialog(context: context, child:
       new AlertDialog(
 
-        content: new Text("Internet connection not found!."),
+        content: new Text("No Network"),
       )
       );
     }
@@ -1296,7 +1296,7 @@ print('aidId'+aid);
               height: MediaQuery.of(context).size.height*0.22,
               child:Column(
               children:<Widget>[
-              Container(width:MediaQuery.of(context).size.width*0.6, child:Text("Your organization's Email is not verified. Please verify now.")),
+              Container(width:MediaQuery.of(context).size.width*0.6, child:Text("Organization's Email is not verified. Please verify now.")),
 
               new Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -1425,7 +1425,7 @@ print('aidId'+aid);
 
                         showDialog(context: context, child:
                         new AlertDialog(
-                          content: new Text("Attendance marked successfully !"),
+                          content: new Text("Attendance punched successfully."),
                         )
                         );
                         Navigator.push(
@@ -1439,7 +1439,7 @@ print('aidId'+aid);
                         showDialog(context: context, child:
                         new AlertDialog(
                           title: new Text("Warning!"),
-                          content: new Text("Problem while marking attendance, try again."),
+                          content: new Text("Attendance was not punched. Try again."),
                         )
                         );
                         setState(() {
@@ -1461,7 +1461,7 @@ print('aidId'+aid);
                 showDialog(context: context, child:
                 new AlertDialog(
                   title: new Text("Warning!"),
-                  content: new Text("Location not fetched..."),
+                  content: new Text("Location was not fetched. Click on Refresh Location."),
                 )
                 );
 
@@ -1475,7 +1475,7 @@ print('aidId'+aid);
           showDialog(context: context, child:
           new AlertDialog(
           title: new Text("Warning!"),
-          content: new Text("Camera closed improperly"),
+          content: new Text("Camera was not closed properly"),
           )
           );
           setState(() {
@@ -1561,7 +1561,7 @@ print('aidId'+aid);
 
                       showDialog(context: context, child:
                       new AlertDialog(
-                        content: new Text("Attendance marked successfully !"),
+                        content: new Text("Attendance marked successfully."),
                       )
                       );
                       Navigator.push(
@@ -1575,7 +1575,7 @@ print('aidId'+aid);
                       showDialog(context: context, child:
                       new AlertDialog(
                         title: new Text("Warning!"),
-                        content: new Text("Problem while marking attendance, try again."),
+                        content: new Text("Attendance was not punched. Try again."),
                       )
                       );
                       setState(() {
@@ -1597,7 +1597,7 @@ print('aidId'+aid);
                 showDialog(context: context, child:
                 new AlertDialog(
                   title: new Text("Warning!"),
-                  content: new Text("Location not fetched..."),
+                  content: new Text("Location was not fetched. Click on Refresh Location."),
                 )
                 );
               }

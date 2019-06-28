@@ -117,7 +117,7 @@ class _ForgotPassword extends State<ForgotPassword> {
                               focusNode: __username,
                               keyboardType: TextInputType.text,
                               decoration: InputDecoration(
-                                  labelText: 'Email/Phone',
+                                  labelText: 'Email ID / Phone No.',
                                   prefixIcon: Padding(
                                     padding: EdgeInsets.all(0.0),
                                     child: Icon(
@@ -129,7 +129,7 @@ class _ForgotPassword extends State<ForgotPassword> {
                               validator: (value) {
                                 if (value.isEmpty || value==null) {
 //                                  FocusScope.of(context).requestFocus(__oldPass);
-                                  return 'Please enter valid Email or Phone';
+                                  return 'Please enter an Email ID or Phone No.';
                                 }
                               },
 
@@ -155,7 +155,7 @@ class _ForgotPassword extends State<ForgotPassword> {
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
                             if (_username.text == ''||_username.text == null) {
-                              showInSnackBar("Please Enter Email/Phone");
+                              showInSnackBar("Please Enter an Email ID or Phone No.");
                               FocusScope.of(context).requestFocus(__username);
                             } else {
                               if(_isButtonDisabled)
@@ -191,7 +191,7 @@ class _ForgotPassword extends State<ForgotPassword> {
 
                                 }
                                 else {
-                                  showInSnackBar("Email/Phone Not Found.");
+                                  showInSnackBar("No such Email ID or Phone No.");
                                   setState(() {
                                     login=false;
                                     succ=false;
@@ -200,7 +200,7 @@ class _ForgotPassword extends State<ForgotPassword> {
                                   });
                                 }
                               }).catchError((onError){
-                                showInSnackBar("Unable to call reset password service");
+                                showInSnackBar("Unable to call the reset password service");
                                 setState(() {
                                   login=false;
                                   succ=false;
@@ -216,8 +216,8 @@ class _ForgotPassword extends State<ForgotPassword> {
                       ),
                     ],
                   ):Center(),
-                  err==true?Text('Invalid Email/Phone.',style: TextStyle(color: Colors.red,fontSize: 16.0),):Center(),
-                  succ==true?Text('Please check your mail for the Password reset link. After you have reset the password, please click below link to login.',style: TextStyle(fontSize: 16.0),):Center(),
+                  err==true?Text('Invalid Email ID or Phone No.',style: TextStyle(color: Colors.red,fontSize: 16.0),):Center(),
+                  succ==true?Text('Please check your mail for the Password reset link. After you have reset the password, please click the below link to login.',style: TextStyle(fontSize: 16.0),):Center(),
                   login==true?InkWell(
                     child: Text('\nClick here to Login',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.0,color: Colors.teal),),
                     onTap:() async{

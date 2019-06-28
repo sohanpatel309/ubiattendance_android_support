@@ -248,7 +248,7 @@ class _Department_att extends State<Department_att> with SingleTickerProviderSta
                                                         setState(() {
                                                           filests=false;
                                                         });
-                                                        dialogwidget('CSV has been saved in internal storage in ubiattendance_files/'+widget.dname+'_Dept_Present_Emp_$tdate.csv');
+                                                        dialogwidget("CSV file is saved in the Phone's internal storage in ubiattendance_files/"+widget.dname+'_Dept_Present_Emp_$tdate.csv');
                                                       });
                                                     },
                                                   ),
@@ -266,7 +266,7 @@ class _Department_att extends State<Department_att> with SingleTickerProviderSta
                                                         setState(() {
                                                           filests=false;
                                                         });
-                                                        dialogwidget('PDF has been saved in internal storage in ubiattendance_files/'+widget.dname+'_Dept_Present_Emp_$tdate.pdf');
+                                                        dialogwidget("PDF file is saved in Phone's internal storage in ubiattendance_files/"+widget.dname+'_Dept_Present_Emp_$tdate.pdf');
                                                       });
                                                     },
                                                   ),
@@ -434,7 +434,7 @@ class _Department_att extends State<Department_att> with SingleTickerProviderSta
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                             //  return new Text("${snapshot.error}");
                           }
 
@@ -494,7 +494,7 @@ class _Department_att extends State<Department_att> with SingleTickerProviderSta
                                                       setState(() {
                                                         filests=false;
                                                       });
-                                                      dialogwidget('CSV has been saved in internal storage in ubiattendance_files/'+widget.dname+'_Dept_Absent_Emp_$tdate.csv');
+                                                      dialogwidget("CSV file is saved in the Phone's internal storage in ubiattendance_files/"+widget.dname+'_Dept_Absent_Emp_$tdate.csv');
                                                     });
                                                   },
                                                 ),
@@ -512,7 +512,7 @@ class _Department_att extends State<Department_att> with SingleTickerProviderSta
                                                       setState(() {
                                                         filests=false;
                                                       });
-                                                      dialogwidget('PDF has been saved in internal storage in ubiattendance_files/'+widget.dname+'_Dept_Absent_Emp_$tdate.pdf');
+                                                      dialogwidget("PDF file is saved in Phone's internal storage in ubiattendance_files/"+widget.dname+'_Dept_Absent_Emp_$tdate.pdf');
                                                     });
                                                   },
                                                 ),
@@ -594,7 +594,7 @@ class _Department_att extends State<Department_att> with SingleTickerProviderSta
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                             // return new Text("${snapshot.error}");
                           }
 
@@ -660,7 +660,7 @@ class _Department_att extends State<Department_att> with SingleTickerProviderSta
                                                         setState(() {
                                                           filests=false;
                                                         });
-                                                        dialogwidget('CSV has been saved in internal storage in ubiattendance_files/'+widget.dname+'_Dept_lateComers_Emp_$tdate.csv');
+                                                        dialogwidget("CSV file is saved in the Phone's internal storage in ubiattendance_files/"+widget.dname+'_Dept_lateComers_Emp_$tdate.csv');
                                                       });
                                                     },
                                                   ),
@@ -678,7 +678,7 @@ class _Department_att extends State<Department_att> with SingleTickerProviderSta
                                                         setState(() {
                                                           filests=false;
                                                         });
-                                                        dialogwidget('PDF has been saved in internal storage in ubiattendance_files/'+widget.dname+'_Dept_lateComers_Emp_$tdate.pdf');
+                                                        dialogwidget("PDF file is saved in Phone's internal storage in ubiattendance_files/"+widget.dname+'_Dept_lateComers_Emp_$tdate.pdf');
                                                       });
                                                     },
                                                   ),
@@ -846,7 +846,7 @@ class _Department_att extends State<Department_att> with SingleTickerProviderSta
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner
@@ -909,7 +909,7 @@ class _Department_att extends State<Department_att> with SingleTickerProviderSta
                                                         setState(() {
                                                           filests=false;
                                                         });
-                                                        dialogwidget('CSV has been saved in internal storage in ubiattendance_files/'+widget.dname+'_Dept_EarlyLeavers_Emp_$tdate.csv');
+                                                        dialogwidget("CSV file is saved in the Phone's internal storage in ubiattendance_files/"+widget.dname+'_Dept_EarlyLeavers_Emp_$tdate.csv');
                                                       });
                                                     },
                                                   ),
@@ -927,7 +927,7 @@ class _Department_att extends State<Department_att> with SingleTickerProviderSta
                                                         setState(() {
                                                           filests=false;
                                                         });
-                                                        dialogwidget('PDF has been saved in internal storage in ubiattendance_files/'+widget.dname+'_Dept_EarlyLeavers_Emp_$tdate.pdf');
+                                                        dialogwidget("PDF file is saved in Phone's internal storage in ubiattendance_files/"+widget.dname+'_Dept_EarlyLeavers_Emp_$tdate.pdf');
                                                       });
                                                     },
                                                   ),
@@ -1096,7 +1096,7 @@ class _Department_att extends State<Department_att> with SingleTickerProviderSta
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner

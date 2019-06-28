@@ -122,7 +122,7 @@ class _Flexitime extends State<Flexitime> {
     const fiveSec = const Duration(seconds: 1);
     int count = 0;
     timer1 = new Timer.periodic(fiveSec, (Timer t) {
-      print("timmer is running");
+      print("timer is running");
     });
   }
 
@@ -393,7 +393,7 @@ class _Flexitime extends State<Flexitime> {
                           textAlign: TextAlign.right,
                     ),
                     Text(
-                      " If Location not being fetched automatically?",
+                      " If Location is not fetched automatically",
                       style: new TextStyle(fontSize: 12.0, color: Colors.black),
                       textAlign: TextAlign.left,
                     ),
@@ -424,7 +424,7 @@ class _Flexitime extends State<Flexitime> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-                'Location permission is restricted from app settings, click "Open Settings" to allow permission.',
+                'Kindly enable Location Services from Settings',
                 textAlign: TextAlign.center,
                 style: new TextStyle(fontSize: 14.0, color: Colors.red)),
             RaisedButton(
@@ -658,7 +658,7 @@ class _Flexitime extends State<Flexitime> {
     } else {
       return Column(children: [
         Text(
-            'Location permission is restricted from app settings, click "Open Settings" to allow permission.',
+            'Kindly enable Location Services from Settings',
             textAlign: TextAlign.center,
             style: new TextStyle(fontSize: 14.0, color: Colors.red)),
         RaisedButton(
@@ -766,7 +766,7 @@ class _Flexitime extends State<Flexitime> {
            });
            showDialog(context: context, child:
            new AlertDialog(
-             content: new Text("Attendance marked successfully!"),
+             content: new Text("Attendance punched successfully!"),
            )
            );
 
@@ -819,7 +819,7 @@ print('visit out called for visit id:'+visit_id);
           textAlign: TextAlign.center, style: new TextStyle(fontSize: 14.0));
     } else {
       return new Text(
-          'Location access is denied. Enable the access through the settings.',
+          'Kindly enable Location services from the settings.',
           textAlign: TextAlign.center,
           style: new TextStyle(fontSize: 14.0, color: Colors.red));
       /*return new  Text('Location is restricted from app settings, click here to allow location permission and refresh', textAlign: TextAlign.center, style: new TextStyle(fontSize: 14.0,color: Colors.red));*/
@@ -878,7 +878,7 @@ print('visit out called for visit id:'+visit_id);
         showDialog(context: context, child:
         new AlertDialog(
           title: new Text("Warning!"),
-          content: new Text("Problem while punching Attendance, try again."),
+          content: new Text("Problem while punching Attendance. Try again."),
         )
         );
         setState(() {
@@ -938,7 +938,7 @@ print('visit out called for visit id:'+visit_id);
           context: context,
           builder: (context) => AlertDialog(
               content: Row( children:<Widget>[
-                Text("Verification link has been sent to \nyour organization's registered Email."),
+                Text("Verification link has been sent to \nyour organization's registered Email ID"),
               ]
               )
           )

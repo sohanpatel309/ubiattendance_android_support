@@ -76,7 +76,7 @@ class _CheckUpdate extends State<CheckUpdate> {
                     SizedBox(height: MediaQuery.of(context).size.height*0.4,),
                     Container(
                       width:MediaQuery.of(context).size.width*0.9,
-                      child:Text('New version found, for better user experience please update the application. ',textAlign: TextAlign.center,),
+                      child:Text('New version found. Please update the App for improved functionality.',textAlign: TextAlign.center,),
                       ),
                     SizedBox(height: MediaQuery.of(context).size.height*0.02,),
                     Container(

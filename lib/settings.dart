@@ -57,7 +57,7 @@ class _Settings extends State<Settings> {
     if(buystatus=="0") {
       return showDialog(context: context, child:
       new AlertDialog(
-        title: new Text("This feature is only available in the premium plan.",
+        title: new Text("This feature is only available in the premium Plan.",
           style: TextStyle(fontSize: 15.0),),
         content: ButtonBar(
           children: <Widget>[
@@ -411,7 +411,7 @@ class _Settings extends State<Settings> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Icon(Icons.group,size: 40.0,),
+              Icon(Icons.weekend,size: 40.0,),
               SizedBox(width: 15.0,),
               Expanded(
                 //widthFactor: MediaQuery.of(context).size.width*0.10,
@@ -450,7 +450,7 @@ class _Settings extends State<Settings> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Icon(Icons.group,size: 40.0,),
+              Icon(Icons.add_location,size: 40.0,),
               SizedBox(width: 15.0,),
               Expanded(
 //                            widthFactor: MediaQuery.of(context).size.width*0.10,
@@ -475,7 +475,7 @@ class _Settings extends State<Settings> {
         splashColor: splashcolor,
         textColor: textcolor,
         onPressed: () {
-          showDialogWidget("To configure Geo Fence, login to the web admin panel");
+          showDialogWidget("To configure the Geo Fence, login to the web admin panel");
           // Perform some action
         },
       ));

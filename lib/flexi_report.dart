@@ -72,6 +72,11 @@ class _FlexiReport extends State<FlexiReport> {
                     'assets/logo.png', height: 40.0, width: 40.0),*/
           ],
         ),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
         automaticallyImplyLeading: false,
         /*  leading: IconButton(
             icon: Icon(Icons.arrow_back),
@@ -161,7 +166,7 @@ class _FlexiReport extends State<FlexiReport> {
                       color: Colors.grey,
                     ), // icon is 48px widget.
                   ), // icon is 48px widget.
-                  labelText: 'Select Date',
+                  labelText: 'Select a Date',
                 ),
                 onChanged: (date) {
                   setState(() {
@@ -173,7 +178,7 @@ class _FlexiReport extends State<FlexiReport> {
                 },
                 validator: (date) {
                   if (date == null) {
-                    return 'Please select date';
+                    return 'Please select a date';
                   }
                 },
               ),
@@ -255,7 +260,7 @@ class _FlexiReport extends State<FlexiReport> {
                 //    width: MediaQuery.of(context).size.width*.45,
                 child: InputDecorator(
                   decoration: InputDecoration(
-                    labelText: 'Select Employee',
+                    labelText: 'Select an Employee',
                     prefixIcon: Padding(
                       padding: EdgeInsets.all(1.0),
                       child: Icon(
@@ -274,8 +279,13 @@ class _FlexiReport extends State<FlexiReport> {
                     value: emp,
                     onChanged: (String newValue) {
                       setState(() {
-                        emp = newValue;
+                      //  res = false;
+                     ///   getEmpDataList(today.text);
+
                         res = true;
+                        emp = newValue;
+
+                        print("Ubiattendance");
 
                       });
 
@@ -379,7 +389,7 @@ class _FlexiReport extends State<FlexiReport> {
                                 width: MediaQuery
                                     .of(context)
                                     .size
-                                    .width * 0.19,
+                                    .width * 0.20,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment
                                       .center,
@@ -468,13 +478,13 @@ class _FlexiReport extends State<FlexiReport> {
              else
               {
                 return new Center(
-                child: Text("No Attendance",style: TextStyle(color: Colors.orangeAccent,fontSize: 18.0),),
+                child: Text("No Attendance records for the Employee(s) on the selected date",style: TextStyle(color: Colors.orangeAccent,fontSize: 18.0),),
               );
             }
           }
           else if (snapshot.hasError)
           {
-            return new Text("Unable to connect server");
+            return new Text("Unable to connect to server");
           }
           // return loader();
           return new Center(child: CircularProgressIndicator());

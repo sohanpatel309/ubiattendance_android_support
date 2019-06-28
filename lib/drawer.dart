@@ -7,7 +7,7 @@ import 'about.dart';
 import 'package:Shrine/services/services.dart';
 import 'home.dart';
 import 'settings.dart';
-import 'Reports.dart';
+import 'reports.dart';
 import 'globals.dart';
 import 'package:share/share.dart';
 import 'package:launch_review/launch_review.dart';
@@ -281,7 +281,7 @@ class _AppDrawerState extends State<AppDrawer> {
               ],
             ),
             onTap: () {
-              showDialogWidget("To set Geo Fence, login to the web admin panel.", "To set Geo Fence upgrade to Premium Plan.");
+              showDialogWidget("To set Geo Fence, login to the web admin panel.", "To set Geo Fence upgrade to the Premium Plan.");
             },
           ):new Center(),
     /*      reportper ==1?new ListTile(
@@ -303,7 +303,7 @@ class _AppDrawerState extends State<AppDrawer> {
               ],
             ),
             onTap: () {
-              showDialogWidget("To Generate QR Code of Employee, Login to the web panel.", "To Generate QR Code of Employee upgrade to Premium Plan.");
+              showDialogWidget("To generate QR Code of Employees, Login to the web panel.", "To generate QR Code of Employees upgrade to Premium Plan.");
             },
           ):new Center(),
          /* new ListTile(

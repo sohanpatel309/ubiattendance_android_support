@@ -134,8 +134,12 @@ print(globals.path+"checkLogin?userName="+user.userName+"&password="+user.userPa
             if (timeinout["act"] != "Imposed") {
               SaveImage mark = new SaveImage();
               bool res = await mark.saveTimeInOutQR(marktimeinout);
-              if (res)
-                return "success";
+              if (res) {
+                if(timeinout["aid"]==0)
+                  return 'timein';
+                else
+                  return 'timeout';
+              }
               else
                 return "poor network";
             } else {

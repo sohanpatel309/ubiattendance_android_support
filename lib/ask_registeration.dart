@@ -289,7 +289,7 @@ class _AskRegisteration extends State<AskRegisteration> {
                                           showDialog(context: context, child:
                                           new AlertDialog(
                                             title: new Text("Alert"),
-                                            content: new Text("Unable to connect server"),
+                                            content: new Text("Unable to connect to server"),
                                           ));
                                           return null;
 

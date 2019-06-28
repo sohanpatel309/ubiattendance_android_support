@@ -65,7 +65,7 @@ class _EmployeeWise_att extends State<EmployeeWise_att> with SingleTickerProvide
         children: <Widget>[
           SizedBox(height:3.0),
           new Container(
-            child: Center(child:Text("Employee Wise Attendance",style: TextStyle(fontSize: 22.0,color: Colors.black54,),),),
+            child: Center(child:Text("Employee wise Attendance",style: TextStyle(fontSize: 22.0,color: Colors.black54,),),),
           ),
           Divider(height: 2.0,),
           getEmployee_DD(),
@@ -316,7 +316,7 @@ class _EmployeeWise_att extends State<EmployeeWise_att> with SingleTickerProvide
                                       width: MediaQuery.of(context).size.width*1,
                                       color: Colors.teal.withOpacity(0.1),
                                       padding:EdgeInsets.only(top:5.0,bottom: 5.0),
-                                      child:Text("No present in last 30 days ",style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center,),
+                                      child:Text("No one is present in last 30 days ",style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center,),
                                     ),
                                   )
                               );
@@ -325,7 +325,7 @@ class _EmployeeWise_att extends State<EmployeeWise_att> with SingleTickerProvide
 
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                             //  return new Text("${snapshot.error}");
                           }
 
@@ -443,14 +443,14 @@ class _EmployeeWise_att extends State<EmployeeWise_att> with SingleTickerProvide
                                       width: MediaQuery.of(context).size.width*1,
                                       color: Colors.teal.withOpacity(0.1),
                                       padding:EdgeInsets.only(top:5.0,bottom: 5.0),
-                                      child:Text("No absent in last 30 days ",style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center,),
+                                      child:Text("No one was absent in the last 30 days",style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center,),
                                     ),
                                   )
                               );
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                             // return new Text("${snapshot.error}");
                           }
 
@@ -500,7 +500,7 @@ class _EmployeeWise_att extends State<EmployeeWise_att> with SingleTickerProvide
                                                   SizedBox(height: 25.0,),
                                                   Container(
                                                     padding: EdgeInsets.only(left: 5.0),
-                                                    child: Text("Total Late Coming: ${countL}",style: TextStyle(color: Colors.orange,fontWeight: FontWeight.bold,fontSize: 16.0,),),
+                                                    child: Text("Total Late Comers: ${countL}",style: TextStyle(color: Colors.orange,fontWeight: FontWeight.bold,fontSize: 16.0,),),
                                                   ),
                                                 ]
                                             ):new Center(),
@@ -660,14 +660,14 @@ class _EmployeeWise_att extends State<EmployeeWise_att> with SingleTickerProvide
                                       width: MediaQuery.of(context).size.width*1,
                                       color: Colors.teal.withOpacity(0.1),
                                       padding:EdgeInsets.only(top:5.0,bottom: 5.0),
-                                      child:Text("No late comings in last 30 days ",style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center,),
+                                      child:Text("No late comers in last 30 days ",style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center,),
                                     ),
                                   )
                               );
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner
@@ -715,7 +715,7 @@ class _EmployeeWise_att extends State<EmployeeWise_att> with SingleTickerProvide
                                                   SizedBox(height: 25.0,),
                                                   Container(
                                                     padding: EdgeInsets.only(left: 11.0),
-                                                    child: Text("Total Early Leaving: ${countE}",style: TextStyle(color: Colors.orange,fontWeight: FontWeight.bold,fontSize: 16.0,),),
+                                                    child: Text("Total Early Leavers: ${countE}",style: TextStyle(color: Colors.orange,fontWeight: FontWeight.bold,fontSize: 16.0,),),
                                                   ),
                                                 ]
                                             ):new Center(),
@@ -873,14 +873,14 @@ class _EmployeeWise_att extends State<EmployeeWise_att> with SingleTickerProvide
                                       width: MediaQuery.of(context).size.width*1,
                                       color: Colors.teal.withOpacity(0.1),
                                       padding:EdgeInsets.only(top:5.0,bottom: 5.0),
-                                      child:Text("No early leavings in last 30 days",style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center,),
+                                      child:Text("No early leavers in the last 30 days",style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center,),
                                     ),
                                   )
                               );
                             }
                           }
                           else if (snapshot.hasError) {
-                            return new Text("Unable to connect server");
+                            return new Text("Unable to connect to server");
                           }
 
                           // By default, show a loading spinner
@@ -897,7 +897,7 @@ class _EmployeeWise_att extends State<EmployeeWise_att> with SingleTickerProvide
           ):Container(
             height: MediaQuery.of(context).size.height*0.25,
             child:Center(
-              child: Text('No Data Available'),
+              child: Text('No Data is available'),
             ),
           ),
         ],

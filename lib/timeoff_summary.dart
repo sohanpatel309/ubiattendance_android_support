@@ -556,7 +556,7 @@ class _TimeoffSummary extends State<TimeoffSummary> {
                       ),
                     );
                 } else if (snapshot.hasError) {
-                  return new Text("Unable to connect server");
+                  return new Text("Unable to connect to server");
                 }
 
                 // By default, show a loading spinner

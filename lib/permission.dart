@@ -277,14 +277,14 @@ class _PermissionPageState extends State<PermissionPage> {
       showDialog(context: context, child:
       new AlertDialog(
         title: new Text("Congrats!"),
-        content: new Text("Permission saved successfully"),
+        content: new Text("Permissions are saved successfully"),
       )
       );
       //showInSnackBar("Permission is saved successfully");
     }else if(act1=="failed"){
-      showInSnackBar("Problem while saving permissions");
+      showInSnackBar("Problem in saving permissions");
     }else{
-      showInSnackBar("Network connection problem");
+      showInSnackBar("Poor Network connection");
     }
   }
 
@@ -393,7 +393,7 @@ class _PermissionPageState extends State<PermissionPage> {
         MaterialPageRoute(builder: (context) => TimeoffSummary()),
       );
     }else if(islogin=="failure"){
-      showInSnackBar("Unable to request time off, permission denied.");
+      showInSnackBar("Unable to request time off. Permission is denied.");
     }else{
       showInSnackBar("Poor Network Connection");
     }

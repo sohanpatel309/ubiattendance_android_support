@@ -401,25 +401,110 @@ class _addShift extends State<addShift> {
                           if (_formKey.currentState.validate()) {
                             if(_isButtonDisabled)
                               return null;
+                            print('ubiattendance');
                        /*     print('Name:'+_shiftName.text);
                             print('Starts:'+_from.text);
                             print('Ends:'+_to.text);*/
+
                             var arr=_from.text.split(':');
                             var arr1=_to.text.split(':');
-                            DateTime from=new DateTime(2001,01,01,int.parse(arr[0]),int.parse(arr[1]),00,00);
-                            DateTime to=new DateTime(2001,01,01,int.parse(arr1[0]),int.parse(arr1[1]),00,00);
+
+
                             var arr_b=_from_b.text.split(':');
                             var arr1_b=_to_b.text.split(':');
-                            DateTime from_b=new DateTime(2001,01,01,int.parse(arr_b[0]),int.parse(arr_b[1]),00,00);
-                            DateTime to_b=new DateTime(2001,01,01,int.parse(arr1_b[0]),int.parse(arr1_b[1]),00,00);
+
+                            DateTime from = new DateTime(2001,01,01,int.parse(arr[0]),int.parse(arr[1]),00,00);
+                            DateTime to = new DateTime(2001,01,01,int.parse(arr1[0]),int.parse(arr1[1]),00,00);
+
+                            DateTime from_b = new DateTime(2001,01,01,int.parse(arr_b[0]),int.parse(arr_b[1]),00,00);
+                            DateTime to_b = new DateTime(2001,01,01,int.parse(arr1_b[0]),int.parse(arr1_b[1]),00,00);
                             var diff = to.difference(from).toString();
+                            var diff1 = to.difference(from);
                             var diff_b = to_b.difference(from_b).toString();
                             var diff_b1 = to_b.difference(from_b);
+
+
                             //DateTime twelve=new DateTime(2001,01,01,-12,00,00,00);
                            // print("start status: "+from.isBefore(from_b).toString());
                           //  print("end status: "+to.isAfter(to_b).toString());
                           //  print("eqn"+DateTime.parse(diff).difference(DateTime.parse(diff_b)).toString());
-                            print(diff_b1.inHours.toString());
+                            print(diff1.inSeconds.toString());
+                            //return null;
+
+                            if(shifttype.toString() == '1')
+                              {
+                                print("If part");
+                                 from=new DateTime(2001,01,01,int.parse(arr[0]),int.parse(arr[1]),00,00);
+                                 to=new DateTime(2001,01,01,int.parse(arr1[0]),int.parse(arr1[1]),00,00);
+
+                                 from_b=new DateTime(2001,01,01,int.parse(arr_b[0]),int.parse(arr_b[1]),00,00);
+                                 to_b=new DateTime(2001,01,01,int.parse(arr1_b[0]),int.parse(arr1_b[1]),00,00);
+                                 diff = to.difference(from).toString();
+                                 diff1 = to.difference(from);
+                                 diff_b = to_b.difference(from_b).toString();
+                                 diff_b1 = to_b.difference(from_b);
+
+
+                              }
+                            else
+                              {
+                                 from = new DateTime(2001,01,01,int.parse(arr[0]),int.parse(arr[1]),00,00);
+                                 to = new DateTime(2001,01,02,int.parse(arr1[0]),int.parse(arr1[1]),00,00);
+
+                                 from_b = new DateTime(2001,01,01,int.parse(arr_b[0]),int.parse(arr_b[1]),00,00);
+                                 to_b = new DateTime(2001,01,01,int.parse(arr1_b[0]),int.parse(arr1_b[1]),00,00);
+
+                                 if(to_b.isBefore(from_b)) // to < from
+                                   {
+                                   from_b = new DateTime(2001,01,01,int.parse(arr_b[0]),int.parse(arr_b[1]),00,00);
+                                   to_b = new DateTime(2001,01,02,int.parse(arr1_b[0]),int.parse(arr1_b[1]),00,00);
+
+                                   }
+                                 else if(to_b.isBefore(from) || from_b.isBefore(from))
+                                   {
+                                     from_b = new DateTime(2001,01,02,int.parse(arr_b[0]),int.parse(arr_b[1]),00,00);
+                                     to_b = new DateTime(2001,01,02,int.parse(arr1_b[0]),int.parse(arr1_b[1]),00,00);
+                                   }
+
+                                 diff = to.difference(from).toString();
+                                 diff1 = to.difference(from);
+                                 diff_b = to_b.difference(from_b).toString();
+                                 diff_b1 = to_b.difference(from_b);
+
+                              }
+                            if(to.isAtSameMomentAs(from)){
+                              showInSnackBar("Shift's start and end time can't be same");
+                              return null;
+                            }
+                            else if(diff1.inSeconds > 72000 )
+                            {
+                              showInSnackBar("Yoc can't create shift of more than 20 hours");
+                              return null;
+                            }
+                            else if(to.isBefore(from))// to < from
+                                {
+                              showInSnackBar('Invalid shift timings');
+                              return null;
+                            }
+                            else if(from_b.isBefore(from))// to < from
+                                {
+                              showInSnackBar('Invalid break timings');
+                              return null;
+                            }
+                            else if(to.isBefore(to_b))// to < from
+                                {
+                              showInSnackBar('Invalid break timings');
+                              return null;
+                            }
+                            if(to_b.isBefore(from_b)) // to < from
+                              {
+                              showInSnackBar('Invalid break timings');
+                              return null;
+                             }
+                            //showInSnackBar('Done');
+                           // return null;
+
+                            /*
                             if(to.isAtSameMomentAs(from)){
                               showInSnackBar("Shift's start and end time can't be same");
                               return null;
@@ -461,6 +546,7 @@ class _addShift extends State<addShift> {
                                 }
                               } else {
                                 if (!diff.startsWith('-')) {
+                                  print(diff);
                                   showInSnackBar('Invalid data');
                                   return null;
                                 } else {
@@ -469,7 +555,10 @@ class _addShift extends State<addShift> {
 
                                 }
                               }
-                            }
+                            }*/
+
+
+
                             setState(() {
                               _isButtonDisabled=true;
                             });
@@ -489,7 +578,7 @@ class _addShift extends State<addShift> {
                                 _isButtonDisabled=false;
                               });
                             }).catchError((exp){
-                              showInSnackBar('Unable to call server service');
+                              showInSnackBar('Unable to call services');
                               setState(() {
                                 _isButtonDisabled=false;
                               });

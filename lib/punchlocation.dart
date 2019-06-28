@@ -346,7 +346,7 @@ class _PunchLocation extends State<PunchLocation> {
                       color: Colors.teal,
                     ),
                     Text(
-                      " Fetching location, please wait..",
+                      " Fetching location... Please wait..",
                       style: new TextStyle(fontSize: 20.0, color: Colors.teal),
                     )
                   ]),
@@ -364,7 +364,7 @@ class _PunchLocation extends State<PunchLocation> {
                       textAlign: TextAlign.right,
                     ),
                     Text(
-                      " If Location not being fetched automatically?",
+                      " If Location is not fetched automatically?",
                       style: new TextStyle(fontSize: 12.0, color: Colors.black),
                       textAlign: TextAlign.left,
                     ),
@@ -395,7 +395,7 @@ class _PunchLocation extends State<PunchLocation> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-                'Location permission is restricted from app settings, click "Open Settings" to allow permission.',
+                'Enable Location Services from Settings',
                 textAlign: TextAlign.center,
                 style: new TextStyle(fontSize: 14.0, color: Colors.red)),
             RaisedButton(
@@ -575,7 +575,7 @@ class _PunchLocation extends State<PunchLocation> {
     } else {
       return Column(children: [
         Text(
-            'Location permission is restricted from app settings, click "Open Settings" to allow permission.',
+            'Enable Location Services from Settings',
             textAlign: TextAlign.center,
             style: new TextStyle(fontSize: 14.0, color: Colors.red)),
         RaisedButton(
@@ -596,7 +596,7 @@ class _PunchLocation extends State<PunchLocation> {
       color: Colors.orangeAccent,
       onPressed: () {
         if(_clientname.text=='') {
-          showInSnackBar('Please insert client name first');
+          showInSnackBar("Please enter Client's name");
           return false;
         }else
           saveVisitImage();
@@ -610,7 +610,7 @@ class _PunchLocation extends State<PunchLocation> {
           textAlign: TextAlign.center, style: new TextStyle(fontSize: 14.0));
     } else {
       return new Text(
-          'Location access is denied. Enable the access through the settings.',
+          'Enable Location Services from Settings',
           textAlign: TextAlign.center,
           style: new TextStyle(fontSize: 14.0, color: Colors.red));
       /*return new  Text('Location is restricted from app settings, click here to allow location permission and refresh', textAlign: TextAlign.center, style: new TextStyle(fontSize: 14.0,color: Colors.red));*/
@@ -654,7 +654,7 @@ class _PunchLocation extends State<PunchLocation> {
         showDialog(context: context, child:
         new AlertDialog(
           title: new Text("Warning!"),
-          content: new Text("Problem while punching visit, try again."),
+          content: new Text("Visit was not punched properly. Please try again."),
         )
         );
         setState(() {
@@ -665,7 +665,7 @@ class _PunchLocation extends State<PunchLocation> {
       showDialog(context: context, child:
       new AlertDialog(
 
-        content: new Text("Internet connection not found!."),
+        content: new Text("No Internet connection!"),
       )
       );
     }
@@ -711,7 +711,7 @@ class _PunchLocation extends State<PunchLocation> {
           context: context,
           builder: (context) => AlertDialog(
               content: Row( children:<Widget>[
-                Text("Verification link has been sent to \nyour organization's registered Email."),
+                Text("Verification link has been sent to \nyour organization's registered Email ID."),
               ]
               )
           )

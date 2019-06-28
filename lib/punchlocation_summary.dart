@@ -239,7 +239,7 @@ class _PunchLocationSummary extends State<PunchLocationSummary> {
                   autofocus: true,
                   controller: _comments,
                   decoration: new InputDecoration(
-                      labelText: 'Visit Feedback ', hintText: 'Visit Feedback (Optional)'),
+                      labelText: "Visit's Feedback", hintText: "Enter the feedback"),
                 ),
               ),
               SizedBox(height: 4.0,),
@@ -277,7 +277,7 @@ class _PunchLocationSummary extends State<PunchLocationSummary> {
                     MaterialPageRoute(builder: (context) => PunchLocationSummary()),
                   );
                 }).catchError((ett){
-                  showInSnackBar('Unable to punch visit');
+                  showInSnackBar('Unable to punch the visit');
                 });
                 /*       //  Loc lock = new Loc();
                 //   location_addr1 = await lock.initPlatformState();
@@ -544,7 +544,7 @@ print('visit out called for visit id:'+visit_id);
                       }
                   );
                 } else if (snapshot.hasError) {
-                  return new Text("Unable to connect server");
+                  return new Text("Unable to connect to server");
                 }
 
                 // By default, show a loading spinner

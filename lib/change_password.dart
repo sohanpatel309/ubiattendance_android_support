@@ -281,7 +281,7 @@ class _changePassword extends State<changePassword> {
                                 if (value.isEmpty || value==null || value.length<6 ) {
                                   __oldPass.notifyListeners();
  //                                 FocusScope.of(context).requestFocus(__newPass);
-                                  return 'Password must be at least 8 characters';
+                                  return 'Password must be of at least 6 characters';
                                 }
                               },
                             ),
@@ -329,13 +329,13 @@ class _changePassword extends State<changePassword> {
                                       "Password changed successfully");
                                 }
                                 else if(res==2)
-                                  showInSnackBar("Old Password did not match");
+                                  showInSnackBar("Passwords did not match");
                                 else if(res==3)
                                   showInSnackBar("New password can't be the same as old password");
                                 else
                                   showInSnackBar("Unable to set password "+res.toString());
                               }).catchError((onError){
-                                showInSnackBar("Unable to connect server");
+                                showInSnackBar("Unable to connect to server");
                                 print(onError);
                               });
                             }

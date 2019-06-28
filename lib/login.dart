@@ -23,7 +23,7 @@ import 'forgot_password.dart';
 import 'askregister.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:connectivity/connectivity.dart';
-
+import 'package:Shrine/globals.dart' as globals;
 
 class LoginPage extends StatefulWidget {
   @override
@@ -133,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                     controller: _passwordController,
                     validator: (value) {
                       if (value.isEmpty) {
-                        return 'Please enter password';
+                        return 'Please enter the password';
                       }
                     },
                     onFieldSubmitted: (String value) {
@@ -232,15 +232,29 @@ class _LoginPageState extends State<LoginPage> {
     });
     print('ab');
     var islogin = await dologin.markAttByQR(qr);
+    print("ubiattendance");
     print(islogin);
-    if(islogin=="success"){
+    if(islogin=="timein"){
       setState(() {
         loader = false;
       });
+
+        Scaffold.of(context)
+            .showSnackBar(
+            SnackBar(content: Text("Time in punched successfully.")));
+
+    }
+    else if(islogin=="timeout"){
+      setState(() {
+        loader = false;
+      });
+
       Scaffold.of(context)
           .showSnackBar(
-          SnackBar(content: Text("Attendance marked successfully.")));
-    }else if(islogin=="failure"){
+          SnackBar(content: Text("Time out punched successfully.")));
+
+    }
+    else if(islogin=="failure"){
       setState(() {
         loader = false;
       });
@@ -253,23 +267,27 @@ class _LoginPageState extends State<LoginPage> {
       });
       Scaffold.of(context)
           .showSnackBar(
-          SnackBar(content: Text("Attendance is already marked")));
+          SnackBar(content: Text("Attendance is already punched")));
     }else if(islogin=="nolocation"){
       setState(() {
         loader = false;
       });
       Scaffold.of(context)
           .showSnackBar(
-          SnackBar(content: Text("Location not fetched...")));
+          SnackBar(content: Text("Location was not fetched. Punch Attendance again")));
     }else{
       setState(() {
         loader = false;
       });
       Scaffold.of(context)
           .showSnackBar(
-          SnackBar(content: Text("Problem while marking attendance")));
+          SnackBar(content: Text("Kindly punch Attendance again")));
     }
   }
+
+
+
+
 
   login(var username,var userpassword, BuildContext context) async{
     final prefs = await SharedPreferences.getInstance();
@@ -326,7 +344,7 @@ class _LoginPageState extends State<LoginPage> {
     } on PlatformException catch (e) {
       if (e.code == BarcodeScanner.CameraAccessDenied) {
         setState(() {
-          this.barcode = 'The user did not grant the camera permission!';
+          this.barcode = 'Kindly allow ubiAttendance App to take pictures';
         });
         return "pemission denied";
       } else {
